@@ -1,4 +1,3 @@
-from flask import render_template
 from http import HTTPStatus
 from werkzeug.exceptions import HTTPException
 
