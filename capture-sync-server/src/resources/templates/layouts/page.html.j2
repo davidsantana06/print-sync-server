@@ -10,12 +10,15 @@
         <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <style>
+            body { background-color: var(--background-color); }
+        </style>
         {{ noscript.style() }}
         {% block style %}{% endblock %}
         <script src="https://kit.fontawesome.com/3f85880f24.js" crossorigin="anonymous"></script>
     </head>
 
-    <body class="bg-body-secondary">
+    <body>
         {{ noscript.template() }}
         {% block content required %}{% endblock %}
         <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>

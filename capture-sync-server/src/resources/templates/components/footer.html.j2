@@ -1,0 +1,24 @@
+{% macro template() %}
+    <footer class="d-flex align-items-center justify-content-center w-100">
+        <a class="text-decoration-none" href="{{ url_for('index') }}">
+            <img class="me-1" src="{{ url_for('static', filename='images/capture-sync.png') }}">
+            <span class="fw-semibold text-white">CaptureSync</span>
+        </a>
+    </footer>
+{% endmacro %}
+
+{% macro style() %}
+    <style>
+        footer {
+            & img { 
+                width: 20px;
+                height: 20px;
+                transition: transform 0.3s; 
+
+                &:hover { transform: scale(1.1); }
+            }
+
+            & .fw-semibold { font-size: small; }
+        }
+    </style>
+{% endmacro %}

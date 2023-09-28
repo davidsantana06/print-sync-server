@@ -1,26 +1,30 @@
 {% extends layout('page') %}
+{% import component('footer') as footer %}
 
 
 {% block title %}Erro {{ error.code }}{% endblock %}
 
 {% block content %}
-    <main class="container d-flex align-items-center justify-content-center">
-        <div id="error" class="shadow">
-            <div id="code" class="bg-white px-3 py-1 rounded-top">
+    <main class="container d-flex flex-column align-items-center justify-content-center">
+        <div id="error" class="shadow mb-2">
+            <div id="code" class="px-3 pt-2 pb-1 rounded-top">
                 <span class="fw-semibold">_{{ error.code }}</span>
             </div>
-            <div id="description" class="bg-dark p-3 rounded-bottom">
+            <div id="description" class="px-3 pb-2 rounded-bottom">
                 <span class="fw-light">{{ error.description }}</span>
             </div>
         </div>
+        {{ footer.template() }}
     </main>
 {% endblock %}
 
 {% block style %}
     <style>
         #error {
+            & #code, #description { background-color: var(--secondary-color); }
+
             & #code {
-                color: var(--secondary-color);
+                color: var(--primary-color);
             }
 
             & #description {
@@ -29,4 +33,5 @@
             }
         }
     </style>
+    {{ footer.style() }}
 {% endblock %}
