@@ -22,7 +22,7 @@ def capture(data: str):
         image_data = b64decode(base64_image)
 
         # Definir o nome do arquivo e o caminho para o armazenamento
-        filename = f'{username} ~ {send_at}.png' 
+        filename = f'{username} ~ {send_at}.png'
         filepath = path.join(UPLOADS_FOLDER, filename)
 
         # Salvar o arquivo no diretório do servidor.

@@ -15,12 +15,6 @@ def complete_template_name(template_name: str) -> str:
     return template_name
 
 
-def component(component_name: str) -> str:
-    return COMPONENT_PATH.format(
-        component_name=complete_template_name(component_name)
-    )
-
-
 def layout(layout_name: str) -> str:
     return LAYOUT_PATH.format(
         layout_name=complete_template_name(layout_name)
