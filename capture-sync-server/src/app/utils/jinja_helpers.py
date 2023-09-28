@@ -27,9 +27,9 @@ def layout(layout_name: str) -> str:
     )
 
 
-def render_page(page_name: str, data: Dict[str, object] = None) -> str:
+def render_page(page_name: str, data: Dict[str, object] = {}) -> str:
     page_path = PAGE_PATH.format(
         name=complete_template_name(page_name)
     )
 
-    return render_template(page_path, data=data)
+    return render_template(page_path, **data)
