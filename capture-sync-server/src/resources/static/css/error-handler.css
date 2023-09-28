@@ -1,0 +1,22 @@
+#error {
+    & #code, #description { background-color: var(--secondary-color); }
+
+    & #code { color: var(--primary-color); }
+
+    & #description {
+        color: white;
+        font-size: small;
+    }
+}
+
+footer {
+    & img { 
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s; 
+
+        &:hover { transform: scale(1.1); }
+    }
+
+    & .fw-semibold { font-size: small; }
+}

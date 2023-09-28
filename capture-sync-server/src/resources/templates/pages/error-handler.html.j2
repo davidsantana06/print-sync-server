@@ -1,37 +1,25 @@
 {% extends layout('page') %}
-{% import component('footer') as footer %}
 
 
 {% block title %}Erro {{ error.code }}{% endblock %}
 
-{% block content %}
-    <main class="container d-flex flex-column align-items-center justify-content-center">
-        <div id="error" class="shadow mb-2">
-            <div id="code" class="px-3 pt-2 pb-1 rounded-top">
-                <span class="fw-semibold">_{{ error.code }}</span>
-            </div>
-            <div id="description" class="px-3 pb-2 rounded-bottom">
-                <span class="fw-light">{{ error.description }}</span>
-            </div>
-        </div>
-        {{ footer.template() }}
-    </main>
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error-handler.css') }}">
 {% endblock %}
 
-{% block style %}
-    <style>
-        #error {
-            & #code, #description { background-color: var(--secondary-color); }
-
-            & #code {
-                color: var(--primary-color);
-            }
-
-            & #description {
-                color: white;
-                font-size: small;
-            }
-        }
-    </style>
-    {{ footer.style() }}
+{% block content %}
+    <main id="error" class="shadow mb-2">
+        <div id="code" class="px-3 pt-2 pb-1 rounded-top">
+            <span class="fw-semibold">_{{ error.code }}</span>
+        </div>
+        <div id="description" class="px-3 pb-2 rounded-bottom">
+            <span class="fw-light">{{ error.description }}</span>
+        </div>
+    </main>
+    <footer class="d-flex align-items-center justify-content-center w-100">
+        <a class="text-decoration-none" href="{{ url_for('index') }}">
+            <img class="me-1" src="{{ url_for('static', filename='images/capture-sync.png') }}">
+            <span class="fw-semibold text-white">CaptureSync</span>
+        </a>
+    </footer>
 {% endblock %}
