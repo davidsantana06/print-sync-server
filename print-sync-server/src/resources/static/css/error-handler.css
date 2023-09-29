@@ -1,4 +1,6 @@
 #error {
+    min-height: 100vh;
+
     & #code, #description { background-color: var(--secondary-color); }
 
     & #code { color: var(--primary-color); }
@@ -9,7 +11,7 @@
     }
 }
 
-footer {
+#print-sync {
     & img { 
         width: 20px;
         height: 20px;

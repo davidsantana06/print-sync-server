@@ -19,8 +19,11 @@ noscript {
     }
 }
 
-body {
-    min-height: 100vh;
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
+.pt-min { padding-top: 5rem !important; }
+
+.pb-min { padding-bottom: 5rem !important; }
+
+.py-min { 
+    padding-top: 5rem !important; 
+    padding-bottom: 5rem !important; 
 }

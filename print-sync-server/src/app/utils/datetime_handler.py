@@ -1,11 +1,11 @@
 from datetime import date, datetime
 
 
-TIME_PATTERN = '%I:%M %p'
-DATE_PATTERN = '{month} {day}, {year}'
+TIME_PATTERN = '%H:%M'
+DATE_PATTERN = '{day} de {month} de {year}'
 MONTH = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    'jan.', 'fev.', 'mar.', 'abr.', 'mai', 'jun.',
+    'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'
 ]
 
 

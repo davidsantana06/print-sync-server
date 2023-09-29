@@ -1,0 +1,25 @@
+@import url('./_variables.css');
+
+
+header {
+    & img {
+        width: 30px;
+        height: 30px;
+    }
+
+    & h1 { font-size: larger; }
+}
+
+table {
+    text-wrap: nowrap;
+
+    & th, td {
+        color: #FFFFFF !important;
+        background-color: var(--secondary-color) !important;
+        align-items: center; 
+    }
+
+    & .material-symbols-outlined { font-size: medium; }
+}
+
+footer { font-size: small; }
