@@ -3,8 +3,8 @@ from flask_socketio import emit
 from os import path
 import json
 
-from . import socket_io
-from .constants import UPLOADS_FOLDER
+from .constants import UPLOADS_DIRECTORY
+from .extensions import socket_io
 
 
 @socket_io.on('capture')
@@ -23,7 +23,7 @@ def capture(data: str):
 
         # Definir o nome do arquivo e o caminho para o armazenamento
         filename = f'{username} ~ {send_at}.png'
-        filepath = path.join(UPLOADS_FOLDER, filename)
+        filepath = path.join(UPLOADS_DIRECTORY, filename)
 
         # Salvar o arquivo no diretório do servidor.
         if not path.exists(filepath):

@@ -1,5 +1,9 @@
-from app import app, socket_io
+from os import environ
+from app import create_app
 
 
 if __name__ == '__main__':
-    socket_io.run(app, host='25.62.141.82', port=5000, debug=True)
+    app = create_app()
+    app.run(
+        host=environ.get('HOST'), port=environ.get('PORT'), debug=environ.get('DEBUG')
+    )

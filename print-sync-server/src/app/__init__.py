@@ -1,22 +1,17 @@
 from flask import Flask
-from flask_socketio import SocketIO
-from os import path
-
-from .constants import RESOURCES_FOLDER
-from .utils import dt_now, layout, format_dt
-
-
-app = Flask(__name__)
-socket_io = SocketIO(app, cors_allowed_origins='*', websocket_max_message_size=10 * 1024 * 1024)
-
-app.static_folder = path.join(RESOURCES_FOLDER, 'static')
-app.template_folder = path.join(RESOURCES_FOLDER, 'templates')
-app.jinja_env.globals.update({
-    'layout': layout,
-    'dt_now': dt_now,
-    'format_dt': format_dt
-})
+from .config import (
+    configure_app_env, configure_error_handler, configure_extensions,
+    configure_jinja_env, configure_module
+)
 
 
-from .events import *
-from .views import *
+def create_app() -> Flask:
+    app = Flask(__name__)
+
+    configure_app_env(app)
+    configure_error_handler(app)
+    configure_extensions(app)
+    configure_jinja_env(app)
+    configure_module(app)
+
+    return app

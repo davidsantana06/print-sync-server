@@ -1,11 +1,11 @@
 from os import path
 
 
-ROOT_FOLDER = path.abspath(
+ROOT_DIRECTORY = path.abspath(
     path.join(
         path.dirname(__file__),
         '..', '..'
     )
 )
-UPLOADS_FOLDER = path.join(ROOT_FOLDER, 'uploads')
-RESOURCES_FOLDER = path.join(ROOT_FOLDER, 'src', 'resources')
+APP_DIRECTORY = path.join(ROOT_DIRECTORY, 'src', 'app')
+UPLOADS_DIRECTORY = path.join(ROOT_DIRECTORY, 'uploads')
