@@ -1,9 +1,10 @@
 from base64 import b64decode
+from datetime import datetime
 from flask_socketio import emit
 from os import path
 import json
 
-from .constants import UPLOADS_DIRECTORY
+from .constants import DT_FORMAT, IMAGE_EXTENSION, UPLOADS_DIRECTORY
 from .extensions import socket_io
 
 
@@ -14,15 +15,18 @@ def capture(data: str):
     try:
         # Captar os dados enviados pelo cliente
         message = dict(json.loads(data))
-        username = message.get('username')
-        send_at = message.get('send_at')
+        author = message.get('username')
+        created_at = message.get('send_at')
         base64_image = message.get('blb_image')
+
+        # Transformar a data em um objeto datetime
+        created_at = datetime.strptime(created_at, DT_FORMAT)
 
         # Decodificar a string base64 para dados binários
         image_data = b64decode(base64_image)
 
         # Definir o nome do arquivo e o caminho para o armazenamento
-        filename = f'{username} ~ {send_at}.png'
+        filename = f'{created_at} ~ {author}.{IMAGE_EXTENSION}'
         filepath = path.join(UPLOADS_DIRECTORY, filename)
 
         # Salvar o arquivo no diretório do servidor.

@@ -9,10 +9,6 @@ MONTH = [
 ]
 
 
-def dt_now() -> datetime:
-    return datetime.now()
-
-
 def format_dt(dt: datetime, reference_date: date) -> str:
     formatted_dt = ''
 

@@ -10,6 +10,10 @@ header {
 table {
     text-wrap: nowrap;
 
+    & .pointer { cursor: pointer; }
+
+    & .created-at { font-size: small; }
+
     & th, td {
         color: #FFFFFF !important;
         background-color: var(--secondary-color) !important;

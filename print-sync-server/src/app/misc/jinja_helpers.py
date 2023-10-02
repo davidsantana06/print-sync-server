@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import render_template as flask_render_template
 from typing import Dict
 
@@ -13,7 +14,9 @@ def complete_template_name(template_name: str) -> str:
 
 
 def render_template(template_name: str, data: Dict[str, object] = {}) -> str:
-    return flask_render_template(complete_template_name(template_name), **data)
+    return flask_render_template(
+        complete_template_name(template_name), **data, today=datetime.today().date()
+    )
 
 
 def template(template_name: str) -> str:
