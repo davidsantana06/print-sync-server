@@ -26,7 +26,7 @@ def capture(data: str):
         image_data = b64decode(base64_image)
 
         # Definir o nome do arquivo e o caminho para o armazenamento
-        filename = f'{created_at} ~ {author}.{IMAGE_EXTENSION}'
+        filename = f'{created_at.strftime(DT_FORMAT)} ~ {author}.{IMAGE_EXTENSION}'
         filepath = path.join(UPLOADS_DIRECTORY, filename)
 
         # Salvar o arquivo no diretório do servidor.

@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('./_padding.css');
-@import url('./_text.css');
 @import url('./_variables.css');
 
 
-* { font-family: 'Montserrat', sans-serif; }
+/* GENERAL */
+
+* { 
+    box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif; 
+}
 
 body { background-color: var(--background-color); }
+
+h1, h2, h3, h4, h5, h6 { margin-bottom: 0; }
+
+
+/* MACROS */
 
 noscript {
     background-color: rgba(0, 0, 0, .8);
@@ -19,3 +27,13 @@ noscript {
         padding: 15px 20px;
     }
 }
+
+
+/* SPACING */
+
+.py-min { 
+    padding-top: 2.5rem !important; 
+    padding-bottom: 2.5rem !important; 
+}
+.pt-min { padding-top: 2.5rem !important; }
+.pb-min { padding-bottom: 2.5rem !important; }

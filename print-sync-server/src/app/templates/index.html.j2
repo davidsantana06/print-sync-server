@@ -9,7 +9,7 @@
 {% block content %}
     <header class="container d-flex align-items-center justify-content-center pb-3 pt-min">
         <img class="me-2" src="{{ url_for('static', filename='images/print-sync.png') }}">
-        <h1 class="text-white">PrintSync</h1>
+        <h1 class="text-white">Print<b>Sync</b></h1>
     </header>
     <main class="container pb-2">
         <div class="table-responsive rounded">
@@ -18,7 +18,7 @@
                     {% if images %}
                         {% for image in images %}
                             <tr class="pointer">
-                                <td class="author ps-3 py-3">
+                                <td>
                                     <div class="d-flex align-items-center">
                                         <span class="material-symbols-outlined me-2">
                                             person
@@ -26,16 +26,16 @@
                                         {{ image.author }}
                                     </div>
                                 </th>
-                                <td class="created-at ps-3 py-3">
-                                    <div class="d-flex align-items-center text-secondary">
+                                <td class="created-at">
+                                    <div class="d-flex align-items-center justify-content-center">
                                         <span class="material-symbols-outlined me-2">
                                             schedule
                                         </span>
                                         {{ format_dt(image.created_at, today) }}
                                     </div>
                                 </td>
-                                <td class="px-3 py-3">
-                                    <div class="d-flex text-center justify-content-end h-100">
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-end">
                                         <span class="material-symbols-outlined text-secondary">
                                             open_in_new
                                         </span>
@@ -52,9 +52,4 @@
             </table>
         </div>
     </main>
-    {% if images %}
-        <footer class="container text-white pb-min">
-            {{ images | length }} resultados
-        </footer>
-    {% endif %}
 {% endblock %}
