@@ -49,6 +49,8 @@ header {
         border-top: 1px solid var(--margin);
         border-bottom: 1px solid var(--margin);
     
+        & .pointer { cursor: pointer; }
+
         & td, th {
             padding: 12px 22px;
         }
@@ -84,7 +86,5 @@ header {
                 background-color: var(--bg-primary);
             }
         }
-    
-    
     }
 }

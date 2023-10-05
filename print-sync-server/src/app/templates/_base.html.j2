@@ -21,5 +21,6 @@
         </noscript>
         {% block content required %}{% endblock %}
         <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        {% block script %}{% endblock %}
     </body>
 </html>

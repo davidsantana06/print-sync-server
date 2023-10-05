@@ -17,50 +17,67 @@
                 <h1>Gerenciar imagens</h1>
             </div>
         <div class="card-page">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if images %}
-                        {% for image in images %}
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="material-symbols-outlined me-2">
-                                            person
-                                        </span>
-                                        {{ image.author }}
-                                    </div>
-                                </th>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="material-symbols-outlined me-2">
-                                            schedule
-                                        </span>
-                                        {{ format_dt(image.created_at, today) }}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="material-symbols-outlined text-secondary">
-                                            open_in_new
-                                        </span>
-                                    </div>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    {% else %}
+            <div class="table-responsive">
+                <table>
+                    <thead>
                         <tr>
-                            <td class="fst-italic text-center py-5">Nada encontrado...</td>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th></th>
                         </tr>
-                    {% endif %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {% if images %}
+                            {% for image in images %}
+                                <tr class="pointer" data-image-name="{{ image.file_name }}">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined me-2">
+                                                person
+                                            </span>
+                                            {{ image.author }}
+                                        </div>
+                                    </th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined me-2">
+                                                schedule
+                                            </span>
+                                            {{ format_dt(image.created_at, today) }}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-secondary">
+                                                download
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td class="fst-italic text-center py-5" colspan="3">Nada encontrado...</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
+{% endblock %}
+
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pointerRows = document.querySelectorAll('.pointer');
+
+            pointerRows.forEach(row => {
+                row.addEventListener('click', function () {
+                    const imageName = this.getAttribute('data-image-name');
+                    window.open(`/uploads/${imageName}`, '_self');
+                });
+            });
+        });
+    </script>
 {% endblock %}
