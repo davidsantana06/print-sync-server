@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap');
 @import url('./_variables.css');
 
 
@@ -6,12 +6,28 @@
 
 * { 
     box-sizing: content-box;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Nunito Sans', sans-serif; 
 }
 
-body { background-color: var(--background-color); }
+body { 
+    background-color: var(--bg-primary);
+ }
 
-h1, h2, h3, h4, h5, h6 { margin-bottom: 0; }
+h1, h2, h3, h4, h5, h6 { 
+    margin-bottom: 0;
+ }
+
+ ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #71717a;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #1f2937;
+}
 
 
 /* MACROS */
@@ -22,10 +38,10 @@ noscript {
     width: 100%;
     height: 100%;
     z-index: 9999;
+}
 
-    & .noscript-overlay {
-        padding: 15px 20px;
-    }
+noscript .noscript-overlay {
+    padding: 15px 20px;
 }
 
 
@@ -35,5 +51,9 @@ noscript {
     padding-top: 2.5rem !important; 
     padding-bottom: 2.5rem !important; 
 }
-.pt-min { padding-top: 2.5rem !important; }
-.pb-min { padding-bottom: 2.5rem !important; }
+.pt-min { 
+    padding-top: 2.5rem !important;
+ }
+.pb-min { 
+    padding-bottom: 2.5rem !important;
+ }

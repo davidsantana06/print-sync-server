@@ -7,17 +7,28 @@
 {% endblock %}
 
 {% block content %}
-    <header class="container d-flex align-items-center justify-content-center pb-3 pt-min">
+    <header class="d-flex align-items-center justify-content-center">
         <img class="me-2" src="{{ url_for('static', filename='images/print-sync.png') }}">
         <h1 class="text-white">Print<b>Sync</b></h1>
     </header>
     <main class="container pb-2">
-        <div class="table-responsive rounded">
-            <table class="table table-borderless table-hover mb-0">
+            <div class="page-title">
+                <span class="material-symbols-outlined me-2">manage_search</span>
+                <h1>Gerenciar imagens</h1>
+            </div>
+        <div class="card-page">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
                 <tbody>
                     {% if images %}
                         {% for image in images %}
-                            <tr class="pointer">
+                            <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <span class="material-symbols-outlined me-2">
@@ -26,8 +37,8 @@
                                         {{ image.author }}
                                     </div>
                                 </th>
-                                <td class="created-at">
-                                    <div class="d-flex align-items-center justify-content-center">
+                                <td>
+                                    <div class="d-flex align-items-center">
                                         <span class="material-symbols-outlined me-2">
                                             schedule
                                         </span>
@@ -35,7 +46,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="d-flex align-items-center justify-content-end">
+                                    <div class="d-flex align-items-center">
                                         <span class="material-symbols-outlined text-secondary">
                                             open_in_new
                                         </span>
