@@ -1,22 +1,17 @@
 from datetime import datetime
-from flask import (
-    Blueprint,
-    abort, send_file
-)
+from flask import abort, send_file
 from http import HTTPStatus
 from os import (
     path,
     listdir
 )
 
-from .constants import DT_FORMAT, IMAGE_EXTENSION, UPLOADS_DIRECTORY
+from . import app
+from .constants import DT_FORMAT, UPLOADS_DIRECTORY
 from .misc import render_template
 
 
-main = Blueprint('main', __name__)
-
-
-@main.get('/')
+@app.get('/')
 def index():
     images = []
 
@@ -33,7 +28,7 @@ def index():
     return (render_template('index', {'images': images}), HTTPStatus.OK)
 
 
-@main.get('/uploads/<file_name>')
+@app.get('/uploads/<file_name>')
 def uploads(file_name: str):
     image = path.join(UPLOADS_DIRECTORY, file_name)
 
@@ -41,5 +36,5 @@ def uploads(file_name: str):
         response = send_file(image, as_attachment=True), HTTPStatus.OK
     else:
         abort(404)
-    
+
     return response

@@ -51,6 +51,10 @@ header h1 {
     border-bottom: 1px solid var(--margin);
 }
 
+.card-page .pointer {
+    cursor: pointer;
+}
+
 .card-page td,
 .card-page th {
     padding: 12px 22px;

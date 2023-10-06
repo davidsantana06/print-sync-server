@@ -7,15 +7,15 @@
 {% endblock %}
 
 {% block content %}
-    <main id="error" class="container d-flex flex-column align-items-center justify-content-center py-min">
-        <div>
-            <div id="code" class="px-3 pt-2 pb-1 rounded-top">
+    <main id="error" class="container d-flex flex-column align-items-center justify-content-center">
+        <div class="py-min">
+            <div id="code" class="pb-1">
                 <span class="fw-semibold">_{{ error.code }}</span>
             </div>
-            <div id="description" class="px-3 pb-2 rounded-bottom mb-2">
+            <div id="description" class="pb-3">
                 <span class="fw-light">{{ error.description }}</span>
             </div>
-            <a id="print-sync" class="d-flex align-items-center justify-content-center text-decoration-none" href="{{ url_for('main.index') }}">
+            <a id="print-sync" class="d-flex align-items-center justify-content-center text-decoration-none" href="{{ url_for('index') }}">
                 <img class="me-1" src="{{ url_for('static', filename='images/print-sync.png') }}">
                 <span class="fw-semibold text-white">PrintSync</span>
             </a>

@@ -1,10 +1,10 @@
-#error {
+#error { 
     min-height: 100vh;
 }
 
 #error #code, #error #description  { 
     background-color: var(--secondary-color);
- }
+}
 
 #error #code { 
     color: var(--primary-color);
