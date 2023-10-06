@@ -1,24 +1,30 @@
 #error {
     min-height: 100vh;
-
-    & #code, #description { background-color: var(--secondary-color); }
-
-    & #code { color: var(--primary-color); }
-
-    & #description {
-        color: white;
-        font-size: small;
-    }
 }
 
-#print-sync {
-    & img { 
-        width: 20px;
-        height: 20px;
-        transition: transform 0.3s; 
+#error #code, #error #description  { 
+    background-color: var(--secondary-color);
+ }
 
-        &:hover { transform: scale(1.1); }
-    }
+#error #code { 
+    color: var(--primary-color);
+ }
 
-    & .fw-semibold { font-size: small; }
+#error #description {
+    color: white;
+    font-size: small;
 }
+
+#print-sync img { 
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s; 
+}
+
+#print-sync img:hover { 
+    transform: scale(1.1);
+ }
+
+#print-sync .fw-semibold { 
+    font-size: small;
+ }
