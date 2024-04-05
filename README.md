@@ -1,4 +1,4 @@
-# PrintSyncClient
+# PrintSync Server
 
 PrintSync Server is a Flask application that enables file uploads from a WebSocket-based web 
 client. This application was developed for the first Distributed Systems assignment at IFBA.
